@@ -5,13 +5,13 @@ function draw_outcome_screen(ptb, trial, params, choseGamble, n2, outcome)
     DrawFormattedText(ptb.win, header, 'center', ptb.center(2)-250, ptb.textColor);
 
     if ~choseGamble
-        msg = sprintf('SAFE chosen\n+$%d', params.money.safeAmount);
+        msg = sprintf('SAFE chosen\nPayout: $%d', params.money.safeAmount);
     else
-        msg = sprintf('GAMBLE chosen\nFirst: %d   Second: %d\nResult: %s', trial.probCue, n2, upper(char(outcome)));
+        base = sprintf('GAMBLE chosen\nFirst: %d   Second: %d\nResult: %s', trial.probCue, n2, upper(char(outcome)));
         if outcome == "win"
-            msg = sprintf('%s\n+$%d', msg, trial.gambleAmount);
+            msg = sprintf('%s\nPayout: $%d   (Safe would be $%d)', base, trial.gambleAmount, params.money.safeAmount);
         else
-            msg = sprintf('%s\n+$0', msg);
+            msg = sprintf('%s\nPayout: $%d   (Safe would be $%d)', base, params.money.gambleLossAmount, params.money.safeAmount);
         end
     end
 
