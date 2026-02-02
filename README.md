@@ -1,4 +1,6 @@
 # Gamble Task — Overton-style task + Ay modifications
+Overton, J. A., Moxon, K. A., Stickle, M. P., Peters, L. M., Lin, J. J., Chang, E. F., Knight, R. T., Hsu, M., & Saez, I. (2025). Distributed Intracranial Activity Underlying Human Decision-making Behavior. The Journal of neuroscience : the official journal of the Society for Neuroscience, 45(15), e0572242024. https://doi.org/10.1523/JNEUROSCI.0572-24.2024
+
 
 Implements a trial-by-trial gambling task where participants choose between:
 - Safe option: $10
