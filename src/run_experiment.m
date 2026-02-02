@@ -24,24 +24,24 @@ function run_experiment(ptb, io, params, subjId)
 
     while keepPracticing
         DrawFormattedText(ptb.win, ...
-            'Practice round.\n\nChoose SAFE ($10) or GAMBLE ($15-$30).\n\nPress any key to begin practice.', ...
+            'Practice.\n\nChoose SAFE ($10) or GAMBLE ($15-$30).\n\nPress any key to start practice.', ...
             'center','center', ptb.textColor);
         Screen('Flip', ptb.win);
         KbStrokeWait;
-
+    
         send_trigger(ptb.trig, params.triggers.codes.practice_start);
-
+    
         practiceDesign = make_design(params, "practice");
         [practiceData, practiceEvents] = run_block(ptb, params, practiceDesign, "practice");
         save_data(outDir, sprintf("practice_%s", datestr(now,'HHMMSS')), practiceData, practiceEvents);
-
+    
         send_trigger(ptb.trig, params.triggers.codes.practice_end);
-
+    
         DrawFormattedText(ptb.win, ...
-            'Practice complete.\n\nIf you are ready for the main task, press SPACE or S.\nIf you want to practice again, press any other key.', ...
+            'Practice complete.\n\nIf you are ready, press SPACE or S.\nTo practice again, press any other key.', ...
             'center','center', ptb.textColor);
         Screen('Flip', ptb.win);
-
+    
         [~, keyCode] = KbStrokeWait;
         if any(keyCode(params.keys.proceedCodes))
             keepPracticing = false;
