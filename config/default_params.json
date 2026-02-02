@@ -1,0 +1,33 @@
+{
+  "keys": {
+    "left": "LeftArrow",
+    "right": "RightArrow",
+    "quit": "ESCAPE",
+    "proceedPractice": ["space", "s"]
+  },
+
+  "triggers": {
+    "enabled": true,
+    "mode": "parallel", 
+    "parallel": { "addressHex": "D010" },
+    "serial": { "port": "COM3", "baud": 115200 },
+
+    "pulseWidthSec": 0.005,
+
+    "codes": {
+      "fix_on": 11,
+      "options_on": 21,
+      "choice_left": 31,
+      "choice_right": 32,
+      "choice_none": 39,
+      "outcome_on": 41,
+      "outcome_win": 51,
+      "outcome_loss": 52,
+      "safe_chosen": 61,
+      "block_start": 71,
+      "block_end": 72,
+      "practice_start": 81,
+      "practice_end": 82
+    }
+  }
+}
