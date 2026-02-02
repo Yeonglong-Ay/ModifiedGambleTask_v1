@@ -1,8 +1,7 @@
 function main_gambletask()
     clc;
     AssertOpenGL;
-
-    addpath(genpath(fileparts(mfilename('fullpath'))));
+    addpath(genpath(fullfile(fileparts(mfilename('fullpath')), 'triggers')));
 
     subjId = input('Subject ID (e.g., 001): ', 's');
     if isempty(subjId), subjId = '999'; end
