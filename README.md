@@ -1,4 +1,4 @@
-# Behavioral Task using Psychtoolbox
+# Modified Gambling Task 
 
 This repository contains the code for a behavioral task using Psychtoolbox, as described in the Ay_ResearchTraining project.
 
