@@ -24,6 +24,16 @@ Streak enforcement is preferentially applied on win-probability=50% trials to pr
    ```matlab
    addpath(genpath('src'));
    main_gambletask
+   
+## TTL triggers
+Trigger output is configured in `config/default_params.json` under `triggers`.
+
+Supported modes:
+- parallel: uses `io64` (LPT). Set `parallel.addressHex` to your port address.
+- serial: uses Psychtoolbox `IOPort` to write bytes to a COM/tty port.
+
+Event codes are defined in `triggers.codes`. Pulses are sent at the actual `Screen('Flip')` timestamps for visual onsets.
+
 ## Repo Layout
 ```
 ModifiedGambleTask_v1/
