@@ -24,7 +24,7 @@ Streak enforcement is preferentially applied on win-probability=50% trials to pr
    ```matlab
    addpath(genpath('src'));
    main_gambletask
----
+## Repo Layout
 ModifiedGambleTask_v1/
   README.md
   LICENSE
