@@ -12,6 +12,7 @@ function [dataTable, eventsTable] = run_block(ptb, params, trials, blockLabel)
     state.lastOutcome = "none";
     state.trialCount = 0;
 
+    send_trigger(ptb.trig, params.triggers.codes.block_start);
     for t = 1:nTrials
         state.trialCount = t;
 
@@ -50,7 +51,8 @@ function [dataTable, eventsTable] = run_block(ptb, params, trials, blockLabel)
         Screen('Flip', ptb.win);
         WaitSecs(params.timing.itiSec);
     end
-
+    send_trigger(ptb.trig, params.triggers.codes.block_end);
+    
     dataTable = struct2table(data);
     eventsTable = struct2table(events);
 end
