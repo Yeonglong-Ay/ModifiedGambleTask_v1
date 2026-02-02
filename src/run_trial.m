@@ -99,6 +99,20 @@ function [result, events] = run_trial(ptb, params, trial)
     end
     events = [events; log_event('outcome_on', vbl, trial)];
 
+    payout = NaN;
+    
+    if ~choseGamble
+        payout = params.money.safeAmount;          % always $10 [1]
+    else
+        if win
+            payout = trial.gambleAmount;           % $15-$30
+        else
+            payout = params.money.gambleLossAmount; % $0 (your choice)
+        end
+    end
+    
+    result.payout = payout;
+    
     % Keep outcome visible for a short moment; your doc specifies outcome reveal timing,
     % not the duration. We'll show it briefly (e.g., 0.55s) to match "feedback epoch".
     WaitSecs(0.55);
