@@ -25,32 +25,39 @@ Streak enforcement is preferentially applied on win-probability=50% trials to pr
    addpath(genpath('src'));
    main_gambletask
 ## Repo Layout
+```
 ModifiedGambleTask_v1/
-  README.md
-  LICENSE
-  .gitignore
-  requirements.md
-  config/
-    default_params.json
-  src/
-    main_gambletask.m
-    load_params.m
-    init_ptb.m
-    run_experiment.m
-    make_design.m
-    run_block.m
-    run_trial.m
-    enforce_streak_logic.m
-    compute_winprob_from_cue.m
-    sample_gamble_amount.m
-    draw_trial_screen.m
-    draw_fixation.m
-    draw_outcome_screen.m
-    collect_choice.m
-    log_event.m
-    save_data.m
-    utils/
-      jsondecode_safe.m
-  data/            (created at runtime; ignored by git)
-  docs/
-    task_timing.md
+├─ README.md
+├─ LICENSE               # MIT (or whichever licence you use)
+├─ .gitignore
+├─ requirements.txt      # pip install -r requirements.txt
+├─ config/
+│  └─ default_params.json
+├─ src/
+│  ├─ main_gambletask.m
+│  ├─ load_params.m
+│  ├─ init_ptb.m
+│  ├─ run_experiment.m
+│  ├─ make_design.m
+│  ├─ run_block.m
+│  ├─ run_trial.m
+│  ├─ enforce_streak_logic.m
+│  ├─ compute_winprob_from_cue.m
+│  ├─ sample_gamble_amount.m
+│  ├─ draw_trial_screen.m
+│  ├─ draw_fixation.m
+│  ├─ draw_outcome_screen.m
+│  ├─ collect_choice.m
+│  ├─ log_event.m
+│  ├─ save_data.m
+│  └─ utils/
+│     └─ jsondecode_safe.m
+├─ data/                 # created at runtime; .gitignore
+└─ docs/
+   └─ task_timing.md
+```
+
+* **`config/`** – default experiment parameters.  
+* **`src/`** – all MATLAB source files; `utils/` holds helper functions.  
+* **`data/`** – generated data (git‑ignored).  
+* **`docs/`** – supplemental documentation (e.g., task timing).  
