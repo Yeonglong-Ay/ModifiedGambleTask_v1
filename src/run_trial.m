@@ -110,7 +110,6 @@ function [result, events] = run_trial(ptb, params, trial)
             payout = params.money.gambleLossAmount; % $0 (your choice)
         end
     end
-    
     result.payout = payout;
     
     % Keep outcome visible for a short moment; your doc specifies outcome reveal timing,
