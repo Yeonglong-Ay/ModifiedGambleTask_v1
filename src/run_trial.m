@@ -13,6 +13,7 @@ function [result, events] = run_trial(ptb, params, trial)
     % Game presentation screen
     draw_trial_screen(ptb, trial, params, "show_options");
     vbl = Screen('Flip', ptb.win);
+    send_trigger(ptb.trig, params.triggers.codes.fix_on);
     events = [events; log_event('options_on', vbl, trial)];
     WaitSecs(params.timing.gamePresentationSec);
 
