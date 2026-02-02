@@ -28,9 +28,9 @@ Streak enforcement is preferentially applied on win-probability=50% trials to pr
 ```
 ModifiedGambleTask_v1/
 ├─ README.md
-├─ LICENSE               # MIT (or whichever licence you use)
+├─ LICENSE               # MIT 
 ├─ .gitignore
-├─ requirements.txt      # pip install -r requirements.txt
+├─ requirements.md      # pip install -r requirements.md
 ├─ config/
 │  └─ default_params.json
 ├─ src/
