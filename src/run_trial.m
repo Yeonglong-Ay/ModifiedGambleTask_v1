@@ -6,6 +6,7 @@ function [result, events] = run_trial(ptb, params, trial)
     % Fixation
     draw_fixation(ptb, '+');
     vbl = Screen('Flip', ptb.win);
+    send_trigger(ptb.trig, params.triggers.codes.fix_on);
     events = [events; log_event('fix_on', vbl, trial)];
     WaitSecs(params.timing.fixationSec);
 
