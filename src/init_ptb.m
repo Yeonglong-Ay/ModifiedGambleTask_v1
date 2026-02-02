@@ -1,5 +1,4 @@
 function [ptb, io] = init_ptb(params)
-    addpath(genpath(fullfile(fileparts(mfilename('fullpath')), 'triggers')));
     Screen('Preference','SkipSyncTests', 1); % Set to 0 for real experiments
 
     screens = Screen('Screens');
