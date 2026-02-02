@@ -1,9 +1,4 @@
 
----
-
-## config/default_params.json
-
-```json
 {
   "taskName": "GambleTaskPTB",
   "screen": { "screenId": -1, "bgColor": [0, 0, 0], "textColor": [255, 255, 255], "textSize": 32 },
