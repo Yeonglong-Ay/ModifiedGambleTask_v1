@@ -45,12 +45,18 @@
     "proceedPractice": ["space", "s"]
   },
 
+  "money": {
+    "safeAmount": 10,
+    "gambleMin": 15,
+    "gambleMax": 30,
+    "gambleLossAmount": 0
+  },
+
   "triggers": {
     "enabled": true,
-    "mode": "parallel", 
+    "mode": "parallel",
     "parallel": { "addressHex": "D010" },
     "serial": { "port": "COM3", "baud": 115200 },
-
     "pulseWidthSec": 0.005,
 
     "codes": {
@@ -63,8 +69,6 @@
       "outcome_win": 51,
       "outcome_loss": 52,
       "safe_chosen": 61,
-      "block_start": 71,
-      "block_end": 72,
       "practice_start": 81,
       "practice_end": 82
     }
