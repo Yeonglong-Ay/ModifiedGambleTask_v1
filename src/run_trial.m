@@ -37,9 +37,11 @@ function [result, events] = run_trial(ptb, params, trial)
     % Determine outcome if gamble chosen
     choseGamble = false;
     if choice == "left"
-        choseGamble = trial.leftIsGamble;
+        send_trigger(ptb.trig, params.triggers.codes.choice_left);
+    elseif choice == "right"
+        send_trigger(ptb.trig, params.triggers.codes.choice_right);
     else
-        choseGamble = ~trial.leftIsGamble;
+        send_trigger(ptb.trig, params.triggers.codes.choice_none);
     end
 
     outcome = "safe";
@@ -84,6 +86,17 @@ function [result, events] = run_trial(ptb, params, trial)
     % Outcome screen
     draw_outcome_screen(ptb, trial, params, choseGamble, n2, outcome);
     vbl = Screen('Flip', ptb.win);
+    send_trigger(ptb.trig, params.triggers.codes.outcome_on);
+    
+    if ~choseGamble
+        send_trigger(ptb.trig, params.triggers.codes.safe_chosen);
+    else
+        if outcome == "win"
+            send_trigger(ptb.trig, params.triggers.codes.outcome_win);
+        elseif outcome == "loss"
+            send_trigger(ptb.trig, params.triggers.codes.outcome_loss);
+        end
+    end
     events = [events; log_event('outcome_on', vbl, trial)];
 
     % Keep outcome visible for a short moment; your doc specifies outcome reveal timing,
